@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ras" prefHeight="549.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmployeeController">
+   <children>
+      <Pane prefHeight="105.0" prefWidth="809.0" style="-fx-background-color: #ddd;">
+         <children>
+            <Label layoutX="167.0" layoutY="22.0" style="-fx-background-color: #c60707; -fx-padding: 10px 50px; -fx-background-radius: 10px;" text="Gestion Des Clients" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField fx:id="txtId" layoutX="56.0" layoutY="117.0" prefHeight="38.0" prefWidth="250.0" promptText="ID (Pour Supprimer ou Modifier)" />
+      <TextField fx:id="txtNom" layoutX="56.0" layoutY="170.0" prefHeight="38.0" prefWidth="250.0" promptText="Nom" />
+      <TextField fx:id="txtAdresse" layoutX="56.0" layoutY="331.0" prefHeight="38.0" prefWidth="250.0" promptText="Adresse" AnchorPane.leftAnchor="56.0" />
+      <TextField fx:id="txtPrenom" layoutX="56.0" layoutY="223.0" prefHeight="38.0" prefWidth="250.0" promptText="Prénom" />
+      <TextField fx:id="txtTele" layoutX="56.0" layoutY="277.0" prefHeight="38.0" prefWidth="250.0" promptText="Téléphone" />
+      <Button fx:id="btnAjouter" layoutX="36.0" layoutY="390.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="38.0" prefWidth="290.0" style="-fx-background-color: #345276;" text="Ajouter" textFill="WHITE" AnchorPane.leftAnchor="36.0">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+         
+      </Button>
+      <Button fx:id="btnSupprimer" layoutX="36.0" layoutY="451.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: #345276;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+         
+      </Button>
+      <Button fx:id="btnModifier" layoutX="196.0" layoutY="451.0" mnemonicParsing="false" onAction="#modifier" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: #345276;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+         
+      </Button>
+      <TableView fx:id="tableau" layoutX="335.0" layoutY="128.0" prefHeight="401.0" prefWidth="474.0">
+         <columns>
+            <TableColumn fx:id="tabId" prefWidth="57.0" text="ID" />
+            <TableColumn fx:id="tabNom" prefWidth="83.0" text="Nom" />
+            <TableColumn fx:id="tabPrenom" prefWidth="90.0" text="Prénom" />
+            <TableColumn fx:id="tabTele" prefWidth="122.0" text="Téléphone" />
+            <TableColumn fx:id="tabAdresse" prefWidth="121.0" text="Adresse" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnMenu" layoutX="60.0" layoutY="508.0" mnemonicParsing="false" onAction="#openMenu" prefHeight="25.0" prefWidth="242.0" style="-fx-background-color: #f4f4f4;" text="&gt;&gt; Retourner à Menu Administrateurs" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

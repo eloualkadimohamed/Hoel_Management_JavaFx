@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS hotel_management;
+
+CREATE TABLE IF NOT EXISTS client (
+cniC VARCHAR(50) PRIMARY KEY ,
+nom VARCHAR(50),
+email VARCHAR(50),
+chambreId int(50),
+password VARCHAR(50)
+)ENGINE='InnoDB';
+
+CREATE TABLE IF NOT EXISTS chambre (
+numch int PRIMARY KEY AUTO_INCREMENT,
+availability CHAR(1),
+prix VARCHAR(50),
+type VARCHAR(50)
+)ENGINE='InnoDB';
+
+CREATE TABLE IF NOT EXISTS reservation (
+idr int PRIMARY KEY AUTO_INCREMENT,
+clientcin VARCHAR(50),
+chambrenum int,
+date_entree date,
+date_sortie date,
+FOREIGN KEY (clientcin) REFERENCES client(cinC) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (chambrenum) REFERENCES chambre(numch) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE='InnoDB';
+
+CREATE TABLE IF NOT EXISTS employee (
+cinE VARCHAR(50) PRIMARY KEY,
+nomE VARCHAR(50),
+emailE VARCHAR(50)
+)ENGINE='InnoDB';
+
+CREATE TABLE IF NOT EXISTS admin (
+numA int PRIMARY KEY AUTO_INCREMENT,
+username VARCHAR(50),
+password VARCHAR(50)
+)ENGINE='InnoDB';
+
+INSERT INTO `employee`( `cinE`,`nomE`, `emailE`) VALUES ("RX3456","amine","amin@gmail.com");
+INSERT INTO `employee`( `cinE`,`nomE`, `emailE`) VALUES ("R5678","hamid",""hamid@gmail.com");
+INSERT INTO `employee`( `cinE`,`nomE`, `emailE`) VALUES ("D67854","mostapha","mostapha@gmail.com");
+
+INSERT INTO `client`( `cinC`,`nom`, `email`, `password`,`chambreId` ) VALUES ("E45678","said","said@gmail.com","tyuil",2);
+
+
+INSERT INTO `chambre`( `availability`,`type, `prix`) VALUES ("available","grande",300);
+INSERT INTO `chambre`( `availability`,`type, `prix`) VALUES ("reserved","petite",200);
+
+INSERT INTO `admin`( `username`, `password`) VALUES ("ali","ali123");
+
+INSERT INTO `reservation`( `date_entree`,`date_sortie`,`chambrenum`,`clientcin`) VALUES ("2024-09-09","2024-09-10",1,"RX3456");
+
+
+
